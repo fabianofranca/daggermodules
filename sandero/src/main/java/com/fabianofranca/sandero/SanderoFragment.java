@@ -2,16 +2,21 @@ package com.fabianofranca.sandero;
 
 import com.fabianofranca.core.Describable;
 import com.fabianofranca.core.DescribableFragment;
+import com.fabianofranca.core.di.PerActivity;
 
 import javax.inject.Inject;
 
+@PerActivity
 public class SanderoFragment extends DescribableFragment {
 
-    @Inject
-    Sandero sandero;
+    private Sandero sandero;
+
+    public SanderoFragment() {
+    }
 
     @Inject
-    public SanderoFragment() {
+    public SanderoFragment(Sandero sandero) {
+        this.sandero = sandero;
     }
 
     @Override

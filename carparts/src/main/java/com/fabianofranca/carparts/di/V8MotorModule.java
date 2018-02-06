@@ -1,7 +1,7 @@
 package com.fabianofranca.carparts.di;
 
-import com.fabianofranca.core.Motor;
 import com.fabianofranca.carparts.V8Motor;
+import com.fabianofranca.core.Motor;
 
 import dagger.Binds;
 import dagger.Module;

@@ -18,7 +18,7 @@ public abstract class DescribableFragment extends DaggerFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
                              @Nullable Bundle savedInstanceState) {
 
-        View view = inflater.inflate(R.layout.fragment_descriable, container,  false);
+        View view = inflater.inflate(R.layout.fragment_descriable, container, false);
 
 
         TextView textView = view.findViewById(R.id.textview_description);

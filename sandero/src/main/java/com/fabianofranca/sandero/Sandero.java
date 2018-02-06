@@ -5,11 +5,13 @@ import com.fabianofranca.carparts.V8Motor;
 import com.fabianofranca.core.Car;
 import com.fabianofranca.core.Motor;
 import com.fabianofranca.core.Wheel;
+import com.fabianofranca.core.di.PerActivity;
 
 import java.util.Random;
 
 import javax.inject.Inject;
 
+@PerActivity
 public class Sandero implements Car {
 
     private String description = "%1$s(%2$s) -> (%3$s, %4$s)";
@@ -30,14 +32,14 @@ public class Sandero implements Car {
 
         int numbers = 1000 + rnd.nextInt(9999);
 
-        plate = String.valueOf(new char[] { first, second, third}).toUpperCase();
+        plate = String.valueOf(new char[]{first, second, third}).toUpperCase();
         plate = plate + "-" + numbers;
     }
 
     @Override
     public String getDescription() {
         return String.format(description,
-                "Sandero", plate, motor.getDescription(), wheel.getDescription()) ;
+                "Sandero", plate, motor.getDescription(), wheel.getDescription());
     }
 
     @Override

@@ -13,7 +13,7 @@ public class DefaultWheel implements Wheel {
     private Rim rim;
 
     @Inject
-    public DefaultWheel(Rim rim, Tire tire) {
+    public DefaultWheel(R15 rim, Goodyear tire) {
         this.rim = rim;
         this.tire = tire;
     }
@@ -21,7 +21,7 @@ public class DefaultWheel implements Wheel {
     @Override
     public String getDescription() {
         return String.format(description,
-                "Default Wheel", rim.getDescription(), tire.getDescription()) ;
+                "Default Wheel", rim.getDescription(), tire.getDescription());
     }
 
     @Override

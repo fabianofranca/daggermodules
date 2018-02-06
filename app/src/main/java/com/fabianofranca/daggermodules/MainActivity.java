@@ -23,22 +23,17 @@ import dagger.android.support.DaggerAppCompatActivity;
 public class MainActivity extends DaggerAppCompatActivity {
 
     private static final String TAG = "Sandero";
-
+    @Inject
+    SanderoFragment fragment1;
+    @Inject
+    SanderoFragment fragment2;
+    @Inject
+    SanderoFragment fragment3;
     private String[] drawerItems = {"1", "2", "3"};
     private DrawerLayout drawerLayout;
     private ListView listView;
     private ActionBarDrawerToggle drawerToggle;
-
-    @Inject
-    SanderoFragment fragment1;
-
-    @Inject
-    SanderoFragment fragment2;
-
-    @Inject
-    SanderoFragment fragment3;
-
-    private List<DescribableFragment> fragments =  new ArrayList<>();
+    private List<DescribableFragment> fragments = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +63,7 @@ public class MainActivity extends DaggerAppCompatActivity {
         };
 
         drawerLayout.addDrawerListener(drawerToggle);
-        drawerLayout.post( () -> drawerToggle.syncState());
+        drawerLayout.post(() -> drawerToggle.syncState());
         //endregion
 
         //region LISTVIEW
@@ -87,13 +82,6 @@ public class MainActivity extends DaggerAppCompatActivity {
         replaceFragment(fragments.get(0));
     }
 
-    private class DrawerItemClickListener implements ListView.OnItemClickListener {
-        @Override
-        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            selectItem(position);
-        }
-    }
-
     private void selectItem(int position) {
         listView.setItemChecked(position, true);
         setTitle(drawerItems[position]);
@@ -105,5 +93,12 @@ public class MainActivity extends DaggerAppCompatActivity {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_content, fragment);
         fragmentTransaction.commit();
+    }
+
+    private class DrawerItemClickListener implements ListView.OnItemClickListener {
+        @Override
+        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            selectItem(position);
+        }
     }
 }
