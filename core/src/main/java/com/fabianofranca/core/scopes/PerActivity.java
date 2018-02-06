@@ -1,4 +1,4 @@
-package com.fabianofranca.core.di;
+package com.fabianofranca.core.scopes;
 
 import java.lang.annotation.Retention;
 

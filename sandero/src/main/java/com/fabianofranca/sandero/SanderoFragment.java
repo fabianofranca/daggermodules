@@ -2,7 +2,7 @@ package com.fabianofranca.sandero;
 
 import com.fabianofranca.core.Describable;
 import com.fabianofranca.core.DescribableFragment;
-import com.fabianofranca.core.di.PerActivity;
+import com.fabianofranca.core.scopes.PerActivity;
 
 import javax.inject.Inject;
 

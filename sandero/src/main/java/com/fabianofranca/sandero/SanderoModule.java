@@ -3,7 +3,7 @@ package com.fabianofranca.sandero;
 import com.fabianofranca.carparts.di.DefaultWheelModule;
 import com.fabianofranca.carparts.di.V8MotorModule;
 import com.fabianofranca.core.Car;
-import com.fabianofranca.core.di.PerFragment;
+import com.fabianofranca.core.scopes.PerFragment;
 
 import dagger.Binds;
 import dagger.Module;

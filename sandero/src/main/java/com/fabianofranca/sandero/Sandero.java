@@ -5,7 +5,6 @@ import com.fabianofranca.carparts.V8Motor;
 import com.fabianofranca.core.Car;
 import com.fabianofranca.core.Motor;
 import com.fabianofranca.core.Wheel;
-import com.fabianofranca.core.di.PerActivity;
 
 import java.util.Random;
 

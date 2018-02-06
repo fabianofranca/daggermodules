@@ -1,7 +1,6 @@
 package com.fabianofranca.daggermodules;
 
-import com.fabianofranca.core.di.PerActivity;
-import com.fabianofranca.daggermodules.MainActivity;
+import com.fabianofranca.core.scopes.PerActivity;
 import com.fabianofranca.sandero.SanderoModule;
 
 import dagger.Module;
