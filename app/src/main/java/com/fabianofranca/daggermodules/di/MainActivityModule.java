@@ -1,6 +1,6 @@
 package com.fabianofranca.daggermodules.di;
 
-import com.fabianofranca.sandero.di.SanderoModule;
+import com.fabianofranca.sandero.SanderoModule;
 
 import dagger.Module;
 
