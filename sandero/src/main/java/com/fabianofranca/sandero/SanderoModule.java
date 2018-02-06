@@ -1,7 +1,6 @@
 package com.fabianofranca.sandero;
 
-import com.fabianofranca.carparts.di.DefaultWheelModule;
-import com.fabianofranca.carparts.di.V8MotorModule;
+import com.fabianofranca.carparts.CarPartsModule;
 import com.fabianofranca.core.Car;
 import com.fabianofranca.core.scopes.PerFragment;
 
@@ -9,7 +8,7 @@ import dagger.Binds;
 import dagger.Module;
 import dagger.android.ContributesAndroidInjector;
 
-@Module(includes = {V8MotorModule.class, DefaultWheelModule.class})
+@Module(includes = CarPartsModule.class)
 public abstract class SanderoModule {
     @Binds
     abstract Car bindSandero(Sandero car);
