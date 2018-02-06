@@ -11,7 +11,6 @@ import java.util.Random;
 
 import javax.inject.Inject;
 
-@PerActivity
 public class Sandero implements Car {
 
     private String description = "%1$s(%2$s) -> (%3$s, %4$s)";
