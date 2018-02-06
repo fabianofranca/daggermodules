@@ -1,6 +1,4 @@
-package com.fabianofranca.daggermodules.di;
-
-import com.fabianofranca.daggermodules.DaggerModulesApplication;
+package com.fabianofranca.daggermodules;
 
 import javax.inject.Singleton;
 
@@ -13,9 +11,9 @@ import dagger.android.support.AndroidSupportInjectionModule;
         ApplicationModule.class,
 })
 @Singleton
-interface ApplicationComponent extends AndroidInjector<DaggerModulesApplication> {
+interface ApplicationComponent extends AndroidInjector<Application> {
 
     @Component.Builder
-    abstract class Builder extends AndroidInjector.Builder<DaggerModulesApplication> {
+    abstract class Builder extends AndroidInjector.Builder<Application> {
     }
 }

@@ -3,7 +3,7 @@
     package="com.fabianofranca.daggermodules">
 
     <application
-        android:name="com.fabianofranca.daggermodules.DaggerModulesApplication"
+        android:name="com.fabianofranca.daggermodules.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
