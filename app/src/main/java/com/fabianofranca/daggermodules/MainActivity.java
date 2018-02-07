@@ -11,10 +11,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.fabianofranca.core.DescribableFragment;
-import com.fabianofranca.sandero.SanderoFragment;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Map;
 
 import javax.inject.Inject;
 
@@ -23,22 +21,21 @@ import dagger.android.support.DaggerAppCompatActivity;
 public class MainActivity extends DaggerAppCompatActivity {
 
     private static final String TAG = "Sandero";
+
     @Inject
-    SanderoFragment fragment1;
-    @Inject
-    SanderoFragment fragment2;
-    @Inject
-    SanderoFragment fragment3;
-    private String[] drawerItems = {"1", "2", "3"};
+    Map<String, DescribableFragment> fragments;
+
     private DrawerLayout drawerLayout;
     private ListView listView;
     private ActionBarDrawerToggle drawerToggle;
-    private List<DescribableFragment> fragments = new ArrayList<>();
+    private String[] fragmentsKeys;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fragmentsKeys = fragments.keySet().toArray(new String[0]);
 
         //region TOOLBAR
         Toolbar toolbar = findViewById(R.id.toolbar);
@@ -70,26 +67,27 @@ public class MainActivity extends DaggerAppCompatActivity {
         listView = findViewById(R.id.main_list);
 
         listView.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_list_item_1,
-                drawerItems));
+                fragmentsKeys));
 
         listView.setOnItemClickListener(new DrawerItemClickListener());
         //endregion
 
-        fragments.add(fragment1);
-        fragments.add(fragment2);
-        fragments.add(fragment3);
-
-        replaceFragment(fragments.get(0));
+        if (!fragments.isEmpty()) {
+            listView.setSelection(0);
+            selectItem(0);
+        }
     }
 
     private void selectItem(int position) {
         listView.setItemChecked(position, true);
-        setTitle(drawerItems[position]);
-        replaceFragment(fragments.get(position));
+
+        String key = fragmentsKeys[position];
+        setTitle(key);
+        replaceFragment(key, fragments.get(key));
         drawerLayout.closeDrawer(listView);
     }
 
-    private void replaceFragment(DescribableFragment fragment) {
+    private void replaceFragment(String title, DescribableFragment fragment) {
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.main_content, fragment);
         fragmentTransaction.commit();

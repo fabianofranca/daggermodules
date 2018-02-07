@@ -1,1 +1,1 @@
-include ':app', ':core', ':carparts', ':sandero'
+include ':app', ':core', ':carparts', ':sandero', ':logan'

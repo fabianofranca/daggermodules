@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/carparts/carparts.iml" filepath="$PROJECT_DIR$/carparts/carparts.iml" />
       <module fileurl="file://$PROJECT_DIR$/core/core.iml" filepath="$PROJECT_DIR$/core/core.iml" />
       <module fileurl="file://$PROJECT_DIR$/daggermodules.iml" filepath="$PROJECT_DIR$/daggermodules.iml" />
+      <module fileurl="file://$PROJECT_DIR$/logan/logan.iml" filepath="$PROJECT_DIR$/logan/logan.iml" />
       <module fileurl="file://$PROJECT_DIR$/sandero/sandero.iml" filepath="$PROJECT_DIR$/sandero/sandero.iml" />
     </modules>
   </component>

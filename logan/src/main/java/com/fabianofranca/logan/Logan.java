@@ -1,4 +1,4 @@
-package com.fabianofranca.sandero;
+package com.fabianofranca.logan;
 
 import com.fabianofranca.carparts.BrazilianPlate;
 import com.fabianofranca.carparts.DefaultWheel;
@@ -10,7 +10,7 @@ import com.fabianofranca.core.Wheel;
 
 import javax.inject.Inject;
 
-public class Sandero implements Car {
+public class Logan implements Car {
 
     private String description = "%1$s(%2$s) -> (%3$s, %4$s)";
     private Wheel wheel;
@@ -18,7 +18,7 @@ public class Sandero implements Car {
     private Plate plate;
 
     @Inject
-    public Sandero(V8Motor motor, DefaultWheel wheel, BrazilianPlate plate) {
+    public Logan(V8Motor motor, DefaultWheel wheel, BrazilianPlate plate) {
         this.motor = motor;
         this.wheel = wheel;
         this.plate = plate;
@@ -27,7 +27,7 @@ public class Sandero implements Car {
     @Override
     public String getDescription() {
         return String.format(description,
-                "Sandero", plate.getValue(), motor.getDescription(), wheel.getDescription());
+                "Logan", plate.getValue(), motor.getDescription(), wheel.getDescription());
     }
 
     @Override

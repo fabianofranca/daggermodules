@@ -1,6 +1,7 @@
 package com.fabianofranca.carparts;
 
 import com.fabianofranca.core.Motor;
+import com.fabianofranca.core.Plate;
 import com.fabianofranca.core.Rim;
 import com.fabianofranca.core.Tire;
 import com.fabianofranca.core.Wheel;
@@ -22,4 +23,7 @@ public abstract class CarPartsModule {
 
     @Binds
     public abstract Motor bindV8Motor(V8Motor motor);
+
+    @Binds
+    public abstract Plate bindBrazilianPlate(BrazilianPlate plate);
 }
